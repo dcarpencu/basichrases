@@ -27,12 +27,25 @@ class _HomePageState extends State<HomePage> {
     'Hallo!',
     'Mă numesc',
     'Mein Name ist',
-    'Cum esti?',
+    'Ce mai faci?',
     "Wie geht's?",
-    'Mă duc să cumpăr pâine',
-    'Ich werde Brot kaufen',
-    'Si eu',
-    'Ich auch'
+    'Frumos',
+    'Schön',
+    'Scuze',
+    'Entschuldigung'
+  ];
+
+  final List sounds = [
+    'assets/salut.mp3',
+    'assets/hallo.mp3',
+    'assets/manumesc.mp3',
+    'assets/name.mp3',
+    'assets/cumesti.mp3',
+    'assets/howareu.mp3',
+    'assets/frumos.mp3',
+    'assets/beautiful.mp3',
+    'assets/scuze.mp3',
+    'assets/sorry.mp3'
   ];
 
   late AudioPlayer player;
@@ -82,7 +95,7 @@ class _HomePageState extends State<HomePage> {
                   color: Colors.transparent,
                   child: InkWell(
                       onTap: () async {
-                        await player.setAsset('german1.mp3');
+                        await player.setAsset(sounds[index]);
                         player.play();
                       },
                       borderRadius: const BorderRadius.all(Radius.circular((20)))),
